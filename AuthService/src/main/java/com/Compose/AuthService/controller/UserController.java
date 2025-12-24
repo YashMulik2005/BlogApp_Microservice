@@ -2,6 +2,7 @@ package com.Compose.AuthService.controller;
 
 import com.Compose.AuthService.dto.SearchRequestDto;
 import com.Compose.AuthService.dto.SuccessResponseHandler;
+import com.Compose.AuthService.dto.UserDetailsResponseDto;
 import com.Compose.AuthService.service.impl.UserServiceImpl;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +21,11 @@ public class UserController {
     public ResponseEntity<?> userProfile(@PathVariable Long id){
         return SuccessResponseHandler.successResponseBuilder(HttpStatus.OK, true,
                 "User details fetched successfully.", userServiceImpl.userById(id));
+    }
+
+    @GetMapping("/Internal/profile/{id}")
+    public UserDetailsResponseDto internalUserProfileData(@PathVariable Long id){
+         return userServiceImpl.userById(id);
     }
 
     @PostMapping("/search")

@@ -1,4 +1,4 @@
-package com.Compose.AuthService.dto;
+package com.Compose.BlogService.dto.userDTOS;
 
 public class UserDetailsResponseDto {
     private Long id;
@@ -56,5 +56,16 @@ public class UserDetailsResponseDto {
 
     public void setProfile_img(String profile_img) {
         this.profile_img = profile_img;
+    }
+
+    @Override
+    public String toString() {
+        return "UserDetailsResponseDto{" +
+                "id=" + id +
+                ", email='" + email + '\'' +
+                ", fName='" + fName + '\'' +
+                ", lName='" + lName + '\'' +
+                ", profile_img='" + profile_img + '\'' +
+                '}';
     }
 }

@@ -3,7 +3,7 @@ package com.Compose.AuthService.dto;
 public class UserSearchResponseDto {
     private Long id;
     private String email;
-    private String Profile_img;
+    private String profile_img;
 
     public UserSearchResponseDto() {
     }
@@ -11,7 +11,7 @@ public class UserSearchResponseDto {
     public UserSearchResponseDto(Long id, String email, String profile_img) {
         this.id = id;
         this.email = email;
-        Profile_img = profile_img;
+        profile_img = profile_img;
     }
 
     public Long getId() {
@@ -31,10 +31,10 @@ public class UserSearchResponseDto {
     }
 
     public String getProfile_img() {
-        return Profile_img;
+        return profile_img;
     }
 
     public void setProfile_img(String profile_img) {
-        Profile_img = profile_img;
+        profile_img = profile_img;
     }
 }
