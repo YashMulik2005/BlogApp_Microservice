@@ -28,4 +28,9 @@ public class GlobalExceptionHandler {
                 .getDefaultMessage();
         return ErrorResposneHandler.errorResponseBuilder(HttpStatus.BAD_REQUEST,false,message );
     }
+
+    @ExceptionHandler(NotFoundException.class)
+    public ResponseEntity<?> NotFoundExceptionHandler(NotFoundException ex){
+        return ErrorResposneHandler.errorResponseBuilder(HttpStatus.NOT_FOUND,false,ex.getMessage());
+    }
 }

@@ -3,7 +3,7 @@ package com.Compose.AuthService.controller;
 import com.Compose.AuthService.dto.LoginRequestDto;
 import com.Compose.AuthService.dto.SignupRequestDto;
 import com.Compose.AuthService.dto.SuccessResponseHandler;
-import com.Compose.AuthService.service.UserService;
+import com.Compose.AuthService.service.AuthService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class AuthController{
 
     @Autowired
-    private UserService userService;
+    private AuthService userService;
 
     @PostMapping("/signup")
     public ResponseEntity<?> signup(@Valid @RequestBody SignupRequestDto signupRequestDto){

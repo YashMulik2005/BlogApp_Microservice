@@ -1,16 +1,16 @@
 package com.Compose.AuthService.dto;
 
-public class SignupResponseDto {
+public class UserDetailsResponseDto {
     private Long id;
     private String email;
     private String fName;
     private String lName;
     private String Profile_img;
 
-    public SignupResponseDto() {
+    public UserDetailsResponseDto() {
     }
 
-    public SignupResponseDto(Long id, String email, String fName, String lName, String password, String profile_img) {
+    public UserDetailsResponseDto(Long id, String email, String fName, String lName, String password, String profile_img) {
         this.id = id;
         this.email = email;
         this.fName = fName;
