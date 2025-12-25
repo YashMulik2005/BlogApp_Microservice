@@ -22,6 +22,12 @@
         <module name="BlogService" />
         <module name="CommentService" />
       </profile>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="RegistryService" />
+      </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
@@ -29,6 +35,7 @@
       <module name="AuthService" options="-parameters" />
       <module name="BlogService" options="-parameters" />
       <module name="CommentService" options="-parameters" />
+      <module name="RegistryService" options="-parameters" />
     </option>
   </component>
 </project>

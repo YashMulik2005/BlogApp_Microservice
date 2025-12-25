@@ -52,7 +52,6 @@ public class CommentServiceImpl implements CommentService {
         return comments.stream()
                 .map(comment -> {
                     UserDetailsResponseDto userData = authClient.getUserDetails(comment.getUserId());
-                    System.out.println(userData);
                     CommentResponseDto commentData = modelMapper.map(comment, CommentResponseDto.class);
                     commentData.setUser(userData);
                     return commentData;
