@@ -1,8 +1,10 @@
 package com.Compose.BlogService.dto;
 
+import com.Compose.BlogService.dto.commentDTOS.CommentResponseDto;
 import com.Compose.BlogService.dto.userDTOS.UserDetailsResponseDto;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 public class SingleBlogDetaliedDto {
     private Long id;
@@ -12,11 +14,12 @@ public class SingleBlogDetaliedDto {
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
     private UserDetailsResponseDto user;
+    private List<CommentResponseDto> comments;
 
     public SingleBlogDetaliedDto() {
     }
 
-    public SingleBlogDetaliedDto(Long id, String title, String content, boolean isDraft, LocalDateTime createdAt, LocalDateTime updatedAt, UserDetailsResponseDto user) {
+    public SingleBlogDetaliedDto(Long id, String title, String content, boolean isDraft, LocalDateTime createdAt, LocalDateTime updatedAt, UserDetailsResponseDto user, List<CommentResponseDto> comments) {
         this.id = id;
         this.title = title;
         this.content = content;
@@ -24,6 +27,7 @@ public class SingleBlogDetaliedDto {
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;
         this.user = user;
+        this.comments = comments;
     }
 
     public UserDetailsResponseDto getUser() {
@@ -80,6 +84,14 @@ public class SingleBlogDetaliedDto {
 
     public void setUpdatedAt(LocalDateTime updatedAt) {
         this.updatedAt = updatedAt;
+    }
+
+    public List<CommentResponseDto> getComments() {
+        return comments;
+    }
+
+    public void setComments(List<CommentResponseDto> comments) {
+        this.comments = comments;
     }
 
     @Override

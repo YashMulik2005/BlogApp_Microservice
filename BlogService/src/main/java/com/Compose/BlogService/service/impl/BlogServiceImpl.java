@@ -8,6 +8,7 @@ import com.Compose.BlogService.model.Blog;
 import com.Compose.BlogService.repository.BlogRepository;
 import com.Compose.BlogService.service.AuthClient;
 import com.Compose.BlogService.service.BlogService;
+import com.Compose.BlogService.service.CommentClient;
 import jakarta.ws.rs.NotFoundException;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,6 +27,9 @@ public class BlogServiceImpl implements BlogService {
 
     @Autowired
     private AuthClient authClient;
+
+    @Autowired
+    private CommentClient commentClient;
 
     @Override
     public BlogResponseDto addBlog(BlogRequestDto blogRequestDto) {
@@ -50,6 +54,7 @@ public class BlogServiceImpl implements BlogService {
 
         SingleBlogDetaliedDto res = modelMapper.map(blog, SingleBlogDetaliedDto.class);
         res.setUser(authClient.getUserDetails(blog.getUserId()));
+        res.setComments(commentClient.getCommentByBlogId(blog.getId()));
         return res;
     }
 
